@@ -23,12 +23,12 @@ export const metadata: Metadata = {
 };
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/campaigns', label: 'Campaigns' },
-  { href: '/campaigns/create', label: 'Create Campaign' },
-  { href: '/activity', label: 'Activity' },
-  { href: '/transactions', label: 'Transactions' },
-  { href: '/wallet', label: 'Wallet' },
+  { href: '/' as const, label: 'Home' },
+  { href: '/wallet' as const, label: 'Wallet' },
+  { href: '/campaigns' as const, label: 'Campaigns' },
+  { href: '/campaigns/create' as const, label: 'Create Campaign' },
+  { href: '/activity' as const, label: 'Activity' },
+  { href: '/transactions' as const, label: 'Transactions' }
 ];
 
 export default function RootLayout({
