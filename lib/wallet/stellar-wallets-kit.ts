@@ -1,0 +1,40 @@
+'use client';
+
+import { STELLAR_NETWORK } from '@/lib/stellar/config';
+
+type KitInstance = {
+  authModal: () => Promise<{ address: string }>;
+  setWallet: (walletId: string) => void;
+  getAddress: () => Promise<{ address: string }>;
+};
+
+let initialized = false;
+
+export async function getWalletKit(): Promise<KitInstance> {
+  const { StellarWalletsKit } = await import(
+    '@creit.tech/stellar-wallets-kit/sdk'
+  );
+
+  const { defaultModules } = await import(
+    '@creit.tech/stellar-wallets-kit/modules/utils'
+  );
+
+  if (!initialized) {
+    StellarWalletsKit.init({
+      modules: defaultModules(),
+
+      network:
+        STELLAR_NETWORK === 'PUBLIC'
+          ? 'Public Global Stellar Network ; September 2015'
+          : 'Test SDF Network ; September 2015',
+    });
+
+    initialized = true;
+  }
+
+  return {
+    authModal: StellarWalletsKit.authModal.bind(StellarWalletsKit),
+    setWallet: StellarWalletsKit.setWallet.bind(StellarWalletsKit),
+    getAddress: StellarWalletsKit.getAddress.bind(StellarWalletsKit),
+  };
+}
