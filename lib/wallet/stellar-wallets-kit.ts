@@ -6,7 +6,6 @@ type KitInstance = {
   openModal: (options: { onWalletSelected: (option: { id: string; name?: string }) => void | Promise<void> }) => Promise<void> | void;
   setWallet: (walletId: string) => void;
   getAddress: () => Promise<{ address: string }>;
-  signTransaction: (xdr: string, options: { networkPassphrase: string }) => Promise<{ signedTxXdr: string }>;
 };
 
 let kitPromise: Promise<KitInstance> | null = null;
