@@ -32,19 +32,6 @@ types/               Shared TypeScript application types
 - `tailwind.config.ts` configures Tailwind CSS, dark mode, shadcn/ui-compatible tokens, and animation utilities.
 - `postcss.config.mjs` wires Tailwind CSS and Autoprefixer into the CSS pipeline.
 
-## Phase 1 Wallet Integration
-
-The current implementation adds complete StellarWalletsKit-powered wallet connection foundations:
-
-- Multi-wallet selection through StellarWalletsKit.
-- Connect and disconnect flows with persisted Zustand session state.
-- Public address, selected wallet, Stellar network passphrase, and native XLM balance display.
-- Horizon-backed balance refresh against Stellar Testnet by default.
-- User-friendly error normalization for missing wallets, rejected requests, insufficient balance, network mismatch, and RPC/Horizon failures.
-- Toast notifications for connection, disconnection, copy, and error states.
-
-Configure the public Stellar endpoints in `.env.local` using `.env.example` as the template.
-
 ## Development
 
 Install dependencies and run the local development server:
