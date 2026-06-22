@@ -21,7 +21,7 @@ export function CampaignDetail({ id }: { id: number }) {
       <div className="mt-6 h-3 rounded-full bg-muted"><div className="h-3 rounded-full bg-primary" style={{ width: `${progress}%` }} /></div>
       <div className="mt-4 grid gap-3 md:grid-cols-3"><div>{campaign.currentAmount} XLM raised</div><div>{campaign.fundingGoal} XLM goal</div><div>{new Date(campaign.deadline * 1000).toLocaleString()}</div></div>
       <form className="mt-6 flex gap-3" onSubmit={(event) => { event.preventDefault(); donate.mutate({ campaignId: id, amount }); }}>
-        <label className="sr-only" htmlFor="donation-amount">Donation amount in XLM</label><input id="donation-amount" className="rounded-xl border bg-background px-3 py-2" min="0.0000001" onChange={(event) => setAmount(event.target.value)} step="0.0000001" type="number" value={amount} />
+        <input className="rounded-xl border bg-background px-3 py-2" min="0.0000001" onChange={(event) => setAmount(event.target.value)} step="0.0000001" type="number" value={amount} />
         <button className="rounded-xl bg-primary px-4 py-2 font-semibold text-primary-foreground disabled:opacity-60" disabled={donate.isPending} type="submit">{donate.isPending ? 'Submitting…' : 'Donate'}</button>
       </form>
       {isCreator ? <button className="mt-4 rounded-xl border px-4 py-2 disabled:opacity-60" disabled={withdraw.isPending} onClick={() => withdraw.mutate(id)} type="button">{withdraw.isPending ? 'Submitting…' : 'Withdraw funds'}</button> : null}

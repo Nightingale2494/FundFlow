@@ -6,8 +6,6 @@ import { ThemeProvider } from 'next-themes';
 import { useState, type ReactNode } from 'react';
 import { Toaster } from 'sonner';
 
-import { TransactionPoller } from '@/components/transactions/transaction-poller';
-
 export function Providers({ children }: { children: ReactNode }) {
   const [queryClient] = useState(
     () =>
@@ -27,7 +25,6 @@ export function Providers({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
         {children}
-        <TransactionPoller />
         <Toaster richColors position="top-right" />
       </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />

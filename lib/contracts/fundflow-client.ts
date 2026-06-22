@@ -125,14 +125,14 @@ export async function fetchActivity(): Promise<ContractEvent[]> {
       const topic = event.topic.map((item) => String(scValToNative(item))).join(':');
       const value = scValToNative(event.value);
       const pair = Array.isArray(value) ? value : [undefined, undefined];
-      const type = topic.includes('CampaignCreated') ? 'CampaignCreated' : topic.includes('DonationMade') ? 'DonationMade' : 'FundsWithdrawn';
+      const type = topic.includes('created') ? 'CampaignCreated' : topic.includes('donated') ? 'DonationMade' : 'FundsWithdrawn';
       return {
         id: `${event.ledger}-${index}`,
         type,
         walletAddress: topic.split(':').at(-1) ?? STELLAR_CONFIG.contractId,
         campaignId: Number(pair[0] ?? value ?? 0),
         amount: pair[1] ? stroopsToXlm(pair[1]) : undefined,
-        timestamp: event.ledgerClosedAt ?? new Date().toISOString()
+        timestamp: new Date().toISOString()
       } satisfies ContractEvent;
     })
     .sort((a, b) => Date.parse(b.timestamp) - Date.parse(a.timestamp));

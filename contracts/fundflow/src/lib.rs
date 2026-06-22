@@ -74,8 +74,7 @@ impl FundFlowContract {
             .persistent()
             .set(&DataKey::Campaign(id), &campaign);
         env.storage().instance().set(&DataKey::CampaignCount, &id);
-        env.events()
-            .publish((Symbol::new(&env, "CampaignCreated"), creator), id);
+        env.events().publish((symbol_short!(created), creator), id);
         id
     }
 
@@ -107,10 +106,8 @@ impl FundFlowContract {
         env.storage()
             .persistent()
             .set(&DataKey::Campaign(campaign_id), &campaign);
-        env.events().publish(
-            (Symbol::new(&env, "DonationMade"), donor),
-            (campaign_id, amount),
-        );
+        env.events()
+            .publish((symbol_short!(donated), donor), (campaign_id, amount));
     }
 
     pub fn withdraw(env: Env, creator: Address, campaign_id: u32) {
@@ -144,7 +141,7 @@ impl FundFlowContract {
             &campaign.current_amount,
         );
         env.events().publish(
-            (Symbol::new(&env, "FundsWithdrawn"), creator),
+            (symbol_short!(withdrawn), creator),
             (campaign_id, campaign.current_amount),
         );
     }
