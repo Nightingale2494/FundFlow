@@ -24,11 +24,11 @@ export const metadata: Metadata = {
 
 const navItems = [
   { href: '/' as const, label: 'Home' },
-  { href: '/wallet' as const, label: 'Wallet' },
   { href: '/campaigns' as const, label: 'Campaigns' },
   { href: '/campaigns/create' as const, label: 'Create Campaign' },
   { href: '/activity' as const, label: 'Activity' },
-  { href: '/transactions' as const, label: 'Transactions' }
+  { href: '/transactions' as const, label: 'Transactions' },
+  { href: '/wallet' as const, label: 'Wallet' },
 ];
 
 export default function RootLayout({
@@ -56,7 +56,7 @@ export default function RootLayout({
                   {navItems.map((item) => (
                     <Link
                       key={item.href}
-                      href={item.href}
+                      href={item.href as never}
                       className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
                     >
                       {item.label}
