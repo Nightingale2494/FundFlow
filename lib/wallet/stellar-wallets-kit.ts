@@ -11,22 +11,23 @@ type KitInstance = {
 let initialized = false;
 
 export async function getWalletKit(): Promise<KitInstance> {
-  const { StellarWalletsKit, Networks } = await import(
-    '@creit.tech/stellar-wallets-kit/sdk'
-  );
+  const sdk = await import('@creit.tech/stellar-wallets-kit/sdk');
 
   const { defaultModules } = await import(
     '@creit.tech/stellar-wallets-kit/modules/utils'
   );
 
+  const StellarWalletsKit = (sdk as any).StellarWalletsKit;
+
   if (!initialized) {
     StellarWalletsKit.init({
       modules: defaultModules(),
+
       network:
         STELLAR_NETWORK === 'PUBLIC'
-          ? Networks.PUBLIC
-          : Networks.TESTNET,
-    });
+          ? 'Public Global Stellar Network ; September 2015'
+          : 'Test SDF Network ; September 2015',
+    } as any);
 
     initialized = true;
   }
