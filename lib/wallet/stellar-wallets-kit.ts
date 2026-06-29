@@ -12,6 +12,7 @@ type KitInstance = {
   ) => Promise<{ signedTxXdr: string; signerAddress: string }>;
 };
 
+let initialized = false;
 export async function getWalletKit(): Promise<KitInstance> {
   const sdk = await import('@creit.tech/stellar-wallets-kit/sdk');
   const { defaultModules } = await import('@creit.tech/stellar-wallets-kit/modules/utils');
