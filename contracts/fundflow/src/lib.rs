@@ -42,21 +42,18 @@ impl FundFlowContract {
     }
 
     pub fn create_campaign(
-    env: Env,
-    creator: Address,
-    _title: String,
-    _description: String,
-    _funding_goal: i128,
-    _deadline: u64,
-) -> u32 {
-    creator.require_auth();
-
-    let id = 1u32;
-
-    env.storage().instance().set(&DataKey::CampaignCount, &id);
-
-    id
-}
+        env: Env,
+        creator: Address,
+        _title: String,
+        _description: String,
+        _funding_goal: i128,
+        _deadline: u64,
+    ) -> u32 {
+        creator.require_auth();
+        let id = 1u32;
+        env.storage().instance().set(&DataKey::CampaignCount, &id);
+        id
+    }
 
     pub fn donate(env: Env, donor: Address, campaign_id: u32, amount: i128) {
         donor.require_auth();
