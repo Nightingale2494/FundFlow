@@ -1,9 +1,8 @@
 'use client';
 
 import { Address, BASE_FEE, Contract, nativeToScVal, rpc, scValToNative, TransactionBuilder, xdr } from '@stellar/stellar-sdk';
-
-import { STELLAR_CONFIG } from '@/lib/stellar/config';
 import { getWalletKit } from '@/lib/wallet/stellar-wallets-kit';
+import { STELLAR_CONFIG } from '@/lib/stellar/config';
 import type { Campaign, ContractEvent } from '@/types/fundflow';
 
 const server = new rpc.Server(STELLAR_CONFIG.rpcUrl, { allowHttp: STELLAR_CONFIG.rpcUrl.startsWith('http://') });
@@ -84,11 +83,29 @@ async function invokeContract(publicKey: string, method: string, args: xdr.ScVal
     .setTimeout(60)
     .build();
 
+  // Prepare transaction for signing
   const prepared = await server.prepareTransaction(transaction);
+  const xdr = prepared.toXDR();
+  console.log("Prepared transaction XDR:", xdr);
 
-  console.log("Prepared transaction:", prepared.toXDR());
+  // Sign the transaction via wallet
+  const kit = await getWalletKit();
+  const { signedTxXdr } = await kit.signTransaction(xdr, {
+    address: publicKey,
+    networkPassphrase: STELLAR_CONFIG.networkPassphrase
+  });
 
-  return "TEMP_TRANSACTION_HASH";
+  // Build the signed transaction object from XDR
+  const signedTx = TransactionBuilder.fromXDR(signedTxXdr, STELLAR_CONFIG.networkPassphrase);
+
+  // Submit to Stellar network
+  const response = await server.sendTransaction(signedTx);
+
+  if (!response.hash) {
+    throw new Error('Transaction submission failed');
+  }
+
+  return response.hash;
 }
 
 export async function fetchCampaigns(): Promise<Campaign[]> {
