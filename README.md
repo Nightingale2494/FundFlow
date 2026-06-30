@@ -193,57 +193,50 @@ Create a `screenshots` folder in the project root and add the following images.
 ### 🏠 Home
 
 ```
-<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/991f8c0d-1918-4e33-93c4-85c358e8540e" />
-
+screenshots/home.png
 ```
 
 ### 👛 Wallet Dashboard
 
 ```
-<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/48dde792-8468-4da2-9680-e50c4b193bfc" />
-
+screenshots/wallet.png
 ```
 
 ### 🔐 Wallet Selection (Required)
 
 ```
-<img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/7a4801bd-e304-413b-b681-bcd8bf238b34" />
-
+screenshots/wallet-options.png
 ```
 
 ### 📢 Campaigns
 
 ```
-<img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/52f7935d-5105-41dd-ad73-6854a9313135" />
-
+screenshots/campaigns.png
 ```
 
 ### ➕ Create Campaign
 
 ```
-<img width="1917" height="970" alt="image" src="https://github.com/user-attachments/assets/eb2da994-a766-4aef-ae71-469c8a23e890" />
-
+screenshots/create-campaign.png
 ```
 
 ### 📡 Activity
 
 ```
-<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/1b4afe53-dfa8-4b86-ae3e-6f65d74811a7" />
-
+screenshots/activity.png
 ```
 
 ### 📜 Transactions
 
 ```
-<img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/0ce3baf2-31d0-45e8-a411-994ae8c26d41" />
-
+screenshots/transactions.png
 ```
 
 ### 📜 Transaction Proof
 
 ```
 
-<img width="1917" height="975" alt="image" src="https://github.com/user-attachments/assets/2a4413ee-8c5d-43a0-8337-131a9de44ac1" />
+screenshots/transaction-proof.png
 
 https://stellar.expert/explorer/testnet/tx/0aec928e5fd313a38e1096d55db84c0b0d441456e0aadfc485e22b31ef52d311
 
