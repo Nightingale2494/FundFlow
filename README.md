@@ -6,48 +6,48 @@
 
 # ✨ Features
 
-* 🔐 Multi-wallet support via Stellar Wallets Kit
-* 👛 Connect and disconnect Stellar wallets
-* 💰 View wallet address and XLM balance
-* 🏗️ Create crowdfunding campaigns
-* ❤️ Donate to campaigns using Soroban smart contracts
-* 💸 Campaign creator withdrawal flow
-* 📡 Real-time activity feed
-* 📜 Transaction history with explorer links
-* ⚡ Automatic transaction status updates
-* 🌙 Responsive modern UI with dark mode
-* 🔔 Toast notifications and loading states
+- 🔐 Multi-wallet support via Stellar Wallets Kit
+- 👛 Connect and disconnect Stellar wallets
+- 💰 View wallet address and XLM balance
+- 🏗️ Create crowdfunding campaigns
+- ❤️ Donate to campaigns using Soroban smart contracts
+- 💸 Campaign creator withdrawal flow
+- 📡 Real-time activity feed
+- 📜 Transaction history with Stellar Explorer links
+- ⚡ Automatic transaction status updates
+- 🌙 Responsive modern UI with dark mode
+- 🔔 Toast notifications and loading states
 
 ---
 
 # 🛠 Tech Stack
 
-* Next.js 15
-* TypeScript
-* Tailwind CSS
-* shadcn/ui
-* Soroban SDK
-* Stellar JavaScript SDK
-* Stellar Wallets Kit
-* TanStack Query
-* Zustand
-* Stellar Testnet
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Soroban SDK
+- Stellar JavaScript SDK
+- Stellar Wallets Kit
+- TanStack Query
+- Zustand
+- Stellar Testnet
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 app/
 components/
+contracts/
 hooks/
 lib/
-contracts/
+public/
 scripts/
 stores/
 styles/
 types/
-public/
 ```
 
 ---
@@ -80,7 +80,7 @@ npm run dev
 Create a `.env.local` file.
 
 ```env
-NEXT_PUBLIC_CONTRACT_ID=CDBK42IVV4NTXA3D4ITDD75AZI5KGBICUS4QBSA3FYBWRUOTJMXOFTTZ
+NEXT_PUBLIC_CONTRACT_ID=CADSFRGYNXUMZWTWJBCUKG5BAK5MMKB3DSLPV5BJUPGHIBVVC3HSSQCX
 
 NEXT_PUBLIC_RPC_URL=https://soroban-testnet.stellar.org
 
@@ -95,13 +95,13 @@ NEXT_PUBLIC_STELLAR_EXPLORER=https://stellar.expert/explorer/testnet
 
 # 👛 Wallet Setup
 
-Install any supported Stellar wallet.
+Install a supported Stellar wallet.
 
 Recommended:
 
-* Freighter Wallet
+- Freighter Wallet
 
-Connect the wallet through the application dashboard and approve transactions when prompted.
+Connect your wallet through the application and approve transactions when prompted.
 
 ---
 
@@ -110,7 +110,7 @@ Connect the wallet through the application dashboard and approve transactions wh
 ## Contract Address
 
 ```
-CDBK42IVV4NTXA3D4ITDD75AZI5KGBICUS4QBSA3FYBWRUOTJMXOFTTZ
+CADSFRGYNXUMZWTWJBCUKG5BAK5MMKB3DSLPV5BJUPGHIBVVC3HSSQCX
 ```
 
 ---
@@ -118,24 +118,24 @@ CDBK42IVV4NTXA3D4ITDD75AZI5KGBICUS4QBSA3FYBWRUOTJMXOFTTZ
 ## Deployment Transaction
 
 ```
-303d75cbf4dea93f7c0d5b6de587e4c1ed337c17441872dabb843608603fae11
+33b232febe9b63a81a5e86cf85c96420274a480b4be9ed13c36972d6a613f73c
 ```
 
 Explorer:
 
-https://stellar.expert/explorer/testnet/tx/303d75cbf4dea93f7c0d5b6de587e4c1ed337c17441872dabb843608603fae11
+https://stellar.expert/explorer/testnet/tx/33b232febe9b63a81a5e86cf85c96420274a480b4be9ed13c36972d6a613f73c
 
 ---
 
 ## Initialization Transaction
 
 ```
-1fc363ffcc855cd9519d188feb2749da3315011c50f3326f064e61c4e762f3fd
+b728f5a4f4eb69d77f39cd177de2c9c5d809177aba1fccc522b6f97f117d5c29
 ```
 
 Explorer:
 
-https://stellar.expert/explorer/testnet/tx/1fc363ffcc855cd9519d188feb2749da3315011c50f3326f064e61c4e762f3fd
+https://stellar.expert/explorer/testnet/tx/b728f5a4f4eb69d77f39cd177de2c9c5d809177aba1fccc522b6f97f117d5c29
 
 ---
 
@@ -153,7 +153,7 @@ http://localhost:3000
 
 ---
 
-# 📦 Contract Build
+# 📦 Building the Smart Contract
 
 ```bash
 cd contracts
@@ -163,7 +163,7 @@ stellar contract build
 
 ---
 
-# 🚀 Contract Deployment
+# 🚀 Deploying the Smart Contract
 
 ```bash
 stellar contract deploy \
@@ -176,51 +176,98 @@ stellar contract deploy \
 
 # 🧪 Available Pages
 
-* `/`
-* `/wallet`
-* `/campaigns`
-* `/campaigns/create`
-* `/campaigns/[id]`
-* `/activity`
-* `/transactions`
+- `/`
+- `/wallet`
+- `/campaigns`
+- `/campaigns/create`
+- `/campaigns/[id]`
+- `/activity`
+- `/transactions`
 
 ---
 
-# 📸 Screenshot
+# 📸 Screenshots
 
-Include a screenshot showing the wallet selection modal with supported Stellar wallets before submission.
+Create a `screenshots` folder in the project root and add the following images.
+
+### 🏠 Home
+
+```
+<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/991f8c0d-1918-4e33-93c4-85c358e8540e" />
+
+```
+
+### 👛 Wallet Dashboard
+
+```
+<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/48dde792-8468-4da2-9680-e50c4b193bfc" />
+
+```
+
+### 🔐 Wallet Selection (Required)
+
+```
+<img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/7a4801bd-e304-413b-b681-bcd8bf238b34" />
+
+```
+
+### 📢 Campaigns
+
+```
+<img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/52f7935d-5105-41dd-ad73-6854a9313135" />
+
+```
+
+### ➕ Create Campaign
+
+```
+<img width="1917" height="970" alt="image" src="https://github.com/user-attachments/assets/eb2da994-a766-4aef-ae71-469c8a23e890" />
+
+```
+
+### 📡 Activity
+
+```
+<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/1b4afe53-dfa8-4b86-ae3e-6f65d74811a7" />
+
+```
+
+### 📜 Transactions
+
+```
+<img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/0ce3baf2-31d0-45e8-a411-994ae8c26d41" />
+
+```
+
+### 📜 Transaction Proof
+
+```
+
+<img width="1917" height="975" alt="image" src="https://github.com/user-attachments/assets/2a4413ee-8c5d-43a0-8337-131a9de44ac1" />
+
+https://stellar.expert/explorer/testnet/tx/0aec928e5fd313a38e1096d55db84c0b0d441456e0aadfc485e22b31ef52d311
+
+```
 
 ---
 
 # 🌍 Live Demo
 
-Deploy on Vercel:
-
 ```
-https://your-project.vercel.app
+https://fund-flow-7tpv.vercel.app/
 ```
-
-(Add deployed URL after hosting.)
 
 ---
 
-# 📋 Git Commit Plan
+# 📋 Git Commit History
 
-### Commit 1
+Minimum recommended commits:
 
-Project initialization and wallet integration.
-
-### Commit 2
-
-Smart contract deployment and frontend integration.
-
-### Commit 3
-
-Real-time events and transaction tracking.
-
-### Commit 4
-
-UI polish and documentation.
+- Initial project setup
+- Wallet integration
+- Soroban smart contract deployment
+- Frontend integration
+- Documentation & UI improvements
 
 ---
 
@@ -230,4 +277,4 @@ MIT
 
 ---
 
-Built with ❤️ using Stellar and Soroban.
+Built with ❤️ using **Stellar**, **Soroban**, and **Next.js**.
