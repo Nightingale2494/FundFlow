@@ -50,31 +50,17 @@ impl FundFlowContract {
         deadline: u64,
     ) -> u32 {
         creator.require_auth();
-        if funding_goal <= 0 {
-            panic!("funding goal must be positive");
-        }
-        if deadline <= env.ledger().timestamp() {
-            panic!("deadline must be in the future");
-        }
-
+        
         let id = Self::get_campaign_count(env.clone()) + 1;
-        let campaign = Campaign {
-            id,
-            creator: creator.clone(),
-            title,
-            description,
-            funding_goal,
-            current_amount: 0,
-            deadline,
-            closed: false,
-            withdrawn: false,
-        };
-
+        
         env.storage()
-            .persistent()
-            .set(&DataKey::Campaign(id), &campaign);
-        env.storage().instance().set(&DataKey::CampaignCount, &id);
-        env.events().publish((symbol_short!("created"), creator), id);
+            .instance()
+            .set(&DataKey::CampaignCount, &id);
+
+        env.events().publish(
+            (symbol_short!("created"), creator),
+            (id, title, description, funding_goal, deadline),
+        );
         id
     }
 
