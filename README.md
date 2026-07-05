@@ -110,7 +110,7 @@ Connect your wallet through the application and approve transactions when prompt
 ## Contract Address
 
 ```
-CADSFRGYNXUMZWTWJBCUKG5BAK5MMKB3DSLPV5BJUPGHIBVVC3HSSQCX
+CCIOIG2FN3HWJUCBDZGHADSBOOJ2ZW4RNOK2YQP4FSI2GC2LIHDHHQHX
 ```
 
 ---
