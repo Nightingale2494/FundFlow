@@ -118,24 +118,24 @@ CCIOIG2FN3HWJUCBDZGHADSBOOJ2ZW4RNOK2YQP4FSI2GC2LIHDHHQHX
 ## Deployment Transaction
 
 ```
-33b232febe9b63a81a5e86cf85c96420274a480b4be9ed13c36972d6a613f73c
+daac8ee435c63fce5a862368ac52c4648d75fcf04505a7f5170687c617639220
 ```
 
 Explorer:
 
-https://stellar.expert/explorer/testnet/tx/33b232febe9b63a81a5e86cf85c96420274a480b4be9ed13c36972d6a613f73c
+https://stellar.expert/explorer/testnet/tx/daac8ee435c63fce5a862368ac52c4648d75fcf04505a7f5170687c617639220
 
 ---
 
 ## Initialization Transaction
 
 ```
-b728f5a4f4eb69d77f39cd177de2c9c5d809177aba1fccc522b6f97f117d5c29
+24ed73582176fd4aa118a14f569d5e7fd5be635116c6de0b17117d2d164d91d8
 ```
 
 Explorer:
 
-https://stellar.expert/explorer/testnet/tx/b728f5a4f4eb69d77f39cd177de2c9c5d809177aba1fccc522b6f97f117d5c29
+https://stellar.expert/explorer/testnet/tx/24ed73582176fd4aa118a14f569d5e7fd5be635116c6de0b17117d2d164d91d8
 
 ---
 
