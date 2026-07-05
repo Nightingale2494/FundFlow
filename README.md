@@ -188,8 +188,6 @@ stellar contract deploy \
 
 # 📸 Screenshots
 
-Create a `screenshots` folder in the project root and add the following images.
-
 ### 🏠 Home
 
 ```
