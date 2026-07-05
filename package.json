@@ -1,0 +1,60 @@
+{
+  "name": "fundflow",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Production-ready decentralized crowdfunding platform on Stellar Testnet using Soroban smart contracts.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "contract:build": "bash scripts/build-contract.sh",
+    "contract:optimize": "bash scripts/optimize-contract.sh",
+    "contract:deploy": "bash scripts/deploy-testnet.sh",
+    "contract:init": "bash scripts/initialize-contract.sh",
+    "env:update": "bash scripts/update-env.sh"
+  },
+  "dependencies": {
+    "@stellar/freighter-api": "^4.1.0",
+    "@stellar/stellar-sdk": "^13.3.0",
+    "@tanstack/react-query": "^5.85.5",
+    "@tanstack/react-query-devtools": "^5.85.5",
+    "@walletconnect/sign-client": "^2.21.8",
+    "@walletconnect/types": "^2.21.8",
+    "@walletconnect/utils": "^2.21.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.468.0",
+    "next": "^15.0.4",
+    "next-themes": "^0.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sonner": "^1.7.1",
+    "@creit.tech/stellar-wallets-kit": "^2.0.0",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.0.4",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.11.0",
+    "npm": ">=10.0.0"
+  }
+}
