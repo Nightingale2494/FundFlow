@@ -240,6 +240,14 @@ https://stellar.expert/explorer/testnet/tx/0aec928e5fd313a38e1096d55db84c0b0d441
 
 ```
 
+### 📜 CI/CD Pipeline Running
+
+```
+
+screenshots/ci/cd-pipeline.png
+
+```
+
 ---
 
 # 🌍 Live Demo
