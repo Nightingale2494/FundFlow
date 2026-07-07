@@ -244,7 +244,7 @@ https://stellar.expert/explorer/testnet/tx/0aec928e5fd313a38e1096d55db84c0b0d441
 
 ```
 
-screenshots/ci/cd-pipeline.png
+screenshots/ci-cd-pipeline.png
 
 ```
 
@@ -254,6 +254,12 @@ screenshots/ci/cd-pipeline.png
 
 ```
 https://fund-flow-7tpv.vercel.app/
+```
+
+# 🌍 Live Demo
+
+```
+https://drive.google.com/file/d/1TKQ_-LKmrR3peFP1ehbrr3woXLtdrHYy/view?usp=drive_link
 ```
 
 ---
